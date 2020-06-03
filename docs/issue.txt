@@ -1,0 +1,13 @@
+1、使用Date时间不准确的问题，后续优化为LocalDateTime（Java8的时间表示方法）
+
+2、ThreadLocal 以线程为key存取值、线程隔离。
+
+3、输入流，输出流的使用
+
+4、注解，反射：
+    自定义注解：
+        常用的元注解：
+            @Target、@Retention、@Document、@Inherited
+         如何读取注解：
+            Method.getDeclaredAnnotations()
+            Method.getAnnotation(Class<T> annotationClass)
