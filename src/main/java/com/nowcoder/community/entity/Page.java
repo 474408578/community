@@ -1,7 +1,7 @@
 package com.nowcoder.community.entity;
 
 /**
- * 封装分页相关的
+ * 封装分页相关
  */
 public class Page {
     private int current = 1;
