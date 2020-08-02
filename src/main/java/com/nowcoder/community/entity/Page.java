@@ -4,8 +4,11 @@ package com.nowcoder.community.entity;
  * 封装分页相关
  */
 public class Page {
+    // 当前页码
     private int current = 1;
+    // 每页显示的上限
     private int limit = 2;
+    // 数据的总行数（用于计算总的页数）
     private int rows;
 
     // 查询路径(用于复用分页链接)
