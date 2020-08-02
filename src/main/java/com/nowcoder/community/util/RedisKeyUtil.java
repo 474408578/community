@@ -13,10 +13,16 @@ public class RedisKeyUtil {
     // 实体的常量前缀
     private static final String PREFIX_ENTITY_LIKE = "like:entity";
 
-    private static final String PREFIX_USER = "like:user";
+    private static final String PREFIX_USER_LIKE = "like:user";
 
     private static final String PREFIX_FOLLOWEE = "followee";
     private static final String PREFIX_FOLLOWER = "follower";
+
+    private static final String PREFIX_KAPTCHA = "kaptcha";
+
+    private static final String PREFIX_TICKET = "ticket";
+
+    private static final String PREFIX_USER = "user";
 
     // 某个实体的赞, 得出实体的赞的key，set集合表示点赞的人。
     // like:entity:entityType:entityId -> set(userId)  set集合作为value
@@ -26,7 +32,7 @@ public class RedisKeyUtil {
 
     // 某一个用户的赞
     public static String getUserLikeKey(int userId) {
-        return PREFIX_USER + SPLIT + userId;
+        return PREFIX_USER_LIKE + SPLIT + userId;
     }
 
     // 某个用户关注的实体
@@ -41,4 +47,19 @@ public class RedisKeyUtil {
         return PREFIX_FOLLOWER + SPLIT + entityType + SPLIT + entityId;
     }
 
+    // 登录验证码,owner为验证码的临时凭证的随机字符串
+    public static String getKaptchaKey(String owner) {
+        return PREFIX_KAPTCHA + SPLIT + owner;
+    }
+
+    // 登录凭证
+    public static String getTicketKey(String ticket) {
+        return PREFIX_TICKET + SPLIT + ticket;
+    }
+
+
+    // 用户
+    public static String getUserKey(int userId) {
+        return PREFIX_USER + SPLIT + userId;
+    }
 }
